@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.enigma.enigmat.model.PurchaseDetail" table="trx_purchase_detail">
+        <id name="purchaseDetailId" type="java.lang.Integer" column="id"/>
+        <property name="purchaseId" type="java.lang.Integer" column="transaction_id"/>
+        <property name="productPrice" type="java.lang.Integer" column="product_price"/>
+        <property name="quantity" type="java.lang.Integer" column="quantity"/>
+        <many-to-one name="product" column="product_id" class="com.enigma.enigmat.model.Product"/>
+    </class>
+</hibernate-mapping>
